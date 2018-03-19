@@ -82,24 +82,17 @@ $(function() {
       localStorage.setItem('username', $signInUser.val());
       localStorage.setItem('name', $signInName.val());
       username = localStorage.getItem('username');
+
       //getToken() function
       let response = await getToken();
       let token = response.data.token;
       localStorage.setItem('token', token);
-
-      //testing!!
-      console.log(
-        'IN HERE.. ',
-        localStorage.getItem('token'),
-        localStorage.getItem('username')
-      );
 
       //hide the log in/sign in btn && show the logout/submit/favorites/username btns
       $signInForm.slideUp();
       $signInNavBtn.hide();
       $logInNavBtn.hide();
       $submitNavBtn.show();
-      console.log('IN HERE WHERE IT NEEDS TO SHOW THE SUBMIT..');
       $favoritesNavBtn.show();
       $userNavBtn.show();
       $logOut.show();
