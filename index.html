@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+
+  <title>Hack or Snooze</title>
+</head>
+
+<body>
+  <div id="wrapper">
+    <nav id="nav_bar">
+      <div id="title">
+        <h2 id="title">Hack or Snooze</h2>
+      </div>
+      <div id="nav_options">
+        <a id="signIn_nav_btn" href=#>sign in</a>
+        <a id="logIn_nav_btn" href="#">log in</a>
+        <a id="submit_nav_btn" href="#">submit</a>
+        <a id="favorites_nav_btn" href="#">favorites</a>
+        <a id="user_nav_btn" href="#">viki</a>
+        <a id="log_out" href="#">log out</a>
+      </div>
+    </nav>
+
+    <!-- sign in form -->
+    <form id="signIn_form">
+      <div class="input_fields">
+        <div>
+          <label for="signIn_name">Name</label>
+        </div>
+        <input type="text" id="signIn_name" placeholder="Enter full name">
+      </div>
+      <div class="input_fields">
+        <div>
+          <label for="signIn_user">Username</label>
+        </div>
+        <input type="username" id="signIn_user" placeholder="Enter username">
+      </div>
+      <div class="input_fields">
+        <div>
+          <label for="signIn_password">Password</label>
+        </div>
+        <input type="password" id="signIn_password" placeholder="Enter password">
+      </div>
+      <div class="input_fields">
+        <input type="submit" id="signIn_submit" placeholder="Submit">
+      </div>
+    </form>
+
+    <!-- log in form -->
+    <form id="logIn_form">
+      <div class="input_fields">
+        <div>
+          <label for="username">Username</label>
+        </div>
+        <input type="username" id="username" placeholder="Enter username">
+      </div>
+      <div class="input_fields">
+        <div>
+          <label for="password">Password</label>
+        </div>
+        <input type="password" id="password" placeholder="Enter password">
+      </div>
+      <div class="input_fields">
+        <input type="submit" id="logIn_submit" placeholder="Submit">
+      </div>
+    </form>
+
+
+    <section id="main">
+      <ol id="story_list">
+      </ol>
+    </section>
+  </div>
+  <script src="./main.js"></script>
+</body>
+
+</html>
