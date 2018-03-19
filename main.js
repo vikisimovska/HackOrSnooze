@@ -11,6 +11,7 @@ $(function() {
   let $logOut = $('#log_out');
   let $signInNavBtn = $('#signIn_nav_btn');
   let $logInNavBtn = $('#logIn_nav_btn');
+  let username;
 
   async function getStories() {
     let stories = await $.getJSON(
@@ -76,14 +77,29 @@ $(function() {
   //signing in a user
   async function signIn() {
     try {
+      //sendSignInCredentials() function
       await sendSignInCredentials();
+      localStorage.setItem('username', $signInUser.val());
+      localStorage.setItem('name', $signInName.val());
+      username = localStorage.getItem('username');
+      //getToken() function
       let response = await getToken();
       let token = response.data.token;
-      console.log('TOKEN IS ', token);
+      localStorage.setItem('token', token);
+
+      //testing!!
+      console.log(
+        'IN HERE.. ',
+        localStorage.getItem('token'),
+        localStorage.getItem('username')
+      );
+
+      //hide the log in/sign in btn && show the logout/submit/favorites/username btns
       $signInForm.slideUp();
       $signInNavBtn.hide();
       $logInNavBtn.hide();
       $submitNavBtn.show();
+      console.log('IN HERE WHERE IT NEEDS TO SHOW THE SUBMIT..');
       $favoritesNavBtn.show();
       $userNavBtn.show();
       $logOut.show();
@@ -91,7 +107,9 @@ $(function() {
       alert('ERROR : ', e);
     }
   }
-  $signInForm.on('submit', function() {
+  $signInForm.on('submit', function(event) {
+    event.preventDefault();
+
     signIn();
   });
 
